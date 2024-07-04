@@ -39,5 +39,3 @@ for _ in range(n):
             print(arr[-1])
         else:
             print(-1)
-    else:
-        break
