@@ -1,15 +1,14 @@
-import sys
 from collections import deque
 
-a, b = map(int, input().split())
+a, b = map(int,input().split())
 
 def bfs(start, count):
-    queue = deque([(a, 0)])
+    queue = deque([(a, 1)])
 
     while queue:
         now, count = queue.popleft()
         if now == b:
-            print(count+1)
+            print(count)
             return
         if now * 2 <= b:
             queue.append((now*2, count+1))
