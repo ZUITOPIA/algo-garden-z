@@ -1,19 +1,16 @@
-from collections import deque
-
-a, b = map(int,input().split())
-
-def bfs(start, count):
-    queue = deque([(a, 1)])
-
-    while queue:
-        now, count = queue.popleft()
-        if now == b:
-            print(count)
-            return
-        if now * 2 <= b:
-            queue.append((now*2, count+1))
-        if now * 10 + 1 <= b:
-            queue.append((now*10+1, count+1))
-    print(-1)
-
-bfs(a,b)
+n,m = map(int,input().split())
+count=0
+while n!=m:
+    if n>m:
+        count=-2
+        break
+    elif str(m)[-1]=='1':
+        m=m//10
+        count+=1
+    elif m%2==0:
+        m=m//2
+        count+=1
+    else:
+        count=-2
+        break
+print(count+1)
