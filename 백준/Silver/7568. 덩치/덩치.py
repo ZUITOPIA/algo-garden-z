@@ -1,13 +1,15 @@
-num_student = int(input())
-student_list = []
+n = int(input())
+person = []
 
-for _ in range(num_student):
-    weight, height = map(int, input().split())
-    student_list.append((weight, height))
+for i in range(n):
+    x, y = map(int, input().split())
+    person.append([x, y])
 
-for i in student_list:
+for i in person:
     rank = 1
-    for j in student_list:
+    for j in person:
         if i[0] < j[0] and i[1] < j[1]:
-                rank += 1
-    print(rank, end = " ")
+            rank += 1
+    print(rank, end=" ")
+
+   
