@@ -1,7 +1,7 @@
 function solution(s) {
     var answer = '';
     
-    let arr = s.split(" ").map((item) => Number(item)).sort((a,b) => a-b)
+    let arr = s.split(" ")
     
-    return arr[0] + " " + arr[arr.length-1]
+    return Math.min(...arr) + " " + Math.max(...arr)
 }
